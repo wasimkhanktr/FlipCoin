@@ -12,7 +12,7 @@ namespace FlipCoin
         {
             Random random = new Random();
             int head = 0, tail = 0;
-            while (head < 21 || tail < 21)
+            while (head < 21 || tail < 21 || (head - tail) < 2)
             {
                 if (random.Next(0, 2) == 0)
                     head++;
@@ -21,10 +21,8 @@ namespace FlipCoin
             }
             if (head > tail)
                 Console.WriteLine("Head Won by " + (head - tail));
-            else if (tail > head)
-                Console.WriteLine("Tail Won by " + (tail - head));
             else
-                Console.WriteLine("Its a Tie");
+                Console.WriteLine("Tail Won by " + (tail - head));
         }
     }
 }
