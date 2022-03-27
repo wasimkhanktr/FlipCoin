@@ -11,10 +11,19 @@ namespace FlipCoin
         static void Main(string[] args)
         {
             Random random = new Random();
-            if (random.Next(0, 2) == 0)
-                Console.WriteLine("Head");
-            else
-                Console.WriteLine("Tail");
+            int no_of_times = Convert.ToInt32(Console.ReadLine());
+            int head = 0, tail = 0;
+            while (no_of_times > 0)
+            {
+                if (random.Next(0, 2) == 0)
+                    head++;
+                else
+                    tail++;
+                no_of_times--;
+            }
+            Console.WriteLine("No of times head occured " + head);
+            Console.WriteLine("No of times tail occured " + tail);
+            Console.ReadLine();
         }
     }
 }
