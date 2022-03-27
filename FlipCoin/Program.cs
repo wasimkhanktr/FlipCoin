@@ -11,18 +11,10 @@ namespace FlipCoin
         static void Main(string[] args)
         {
             Random random = new Random();
-            int head = 0, tail = 0;
-            while (head < 21 || tail < 21 || (head - tail) < 2)
-            {
-                if (random.Next(0, 2) == 0)
-                    head++;
-                else
-                    tail++;
-            }
-            if (head > tail)
-                Console.WriteLine("Head Won by " + (head - tail));
+            if (random.Next(0, 2) == 0)
+                Console.WriteLine("Head");
             else
-                Console.WriteLine("Tail Won by " + (tail - head));
+                Console.WriteLine("Tail");
         }
     }
 }
